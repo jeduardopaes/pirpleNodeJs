@@ -21,11 +21,15 @@ const server = http.createServer(function (req, res){
   //Pega o metodo(verbo) HTTP 
   let method = req.method.toLowerCase();
 
+  //Pega o Header como um objeto
+  let headers = req.headers;
+
   //Envia uma resposta
   res.end('Oi Web\n');
 
   //Log o Path requisitado
   console.log('Requisição de: '+method+' para o caminho: '+trimmedPath+' com os parametros: ',queryStringObject);
+  console.log('Headers do request: ',headers);
 });
 
 //Inicializa o servidor que deve escutar a porta 3000.
