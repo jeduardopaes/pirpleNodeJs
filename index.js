@@ -5,6 +5,7 @@
 //dependências
 const http = require('http');
 const url = require('url');
+const StringDecoder = require('string_decoder').StringDecoder;
 
 //O servidor deve responder a todos os requestes com uma String.
 const server = http.createServer(function (req, res){
@@ -24,12 +25,25 @@ const server = http.createServer(function (req, res){
   //Pega o Header como um objeto
   let headers = req.headers;
 
-  //Envia uma resposta
-  res.end('Oi Web\n');
+  //Pega o PayLoad(Body), se existir
+  let decoder = new StringDecoder('utf-8');
+  let buffer = '';
+  req.on('data',function(data){
+    buffer += decoder.write(data);
+  });
+  req.on('end',function(){
+    buffer += decoder.end();
 
-  //Log o Path requisitado
-  console.log('Requisição de: '+method+' para o caminho: '+trimmedPath+' com os parametros: ',queryStringObject);
-  console.log('Headers do request: ',headers);
+    //Envia uma resposta
+    res.end('Oi Web\n');
+
+    //Log o Path requisitado
+    console.log('Requisição de: '+method+' para o caminho: '+trimmedPath+' com os parametros: ',queryStringObject);
+    console.log('Headers do request: ',headers);
+    console.log('Payload: ',buffer);
+
+  });
+
 });
 
 //Inicializa o servidor que deve escutar a porta 3000.

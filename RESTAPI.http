@@ -4,6 +4,12 @@ POST http://localhost:3000/users?name=Jose
 Content-Type: application/json
 fizz: buzz 
 
+{
+  "name": "Carlos Eduardo",
+  "number": "22998249847",
+  "email":"c.eduardopaes@exemplo.com",
+  "password":"SenhaBernardo"
+}
 
 ###
 
