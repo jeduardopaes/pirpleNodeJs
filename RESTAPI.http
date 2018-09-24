@@ -1,0 +1,21 @@
+###
+
+POST http://localhost:3000/users?name=Jose
+
+###
+
+GET http://localhost:3000/users?name=Jose
+
+###
+
+DELETE http://localhost:3000/users?name=Jose
+
+###
+
+PATCH http://localhost:3000/users?name=Jose
+
+###
+
+PUT http://localhost:3000/users?name=Jose
+
+###

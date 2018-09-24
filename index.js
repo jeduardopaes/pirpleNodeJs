@@ -15,11 +15,17 @@ const server = http.createServer(function (req, res){
   let path = parsedUrl.pathname;
   let trimmedPath = path.replace(/^\/+|\/+$/g,"");
 
+  //Pega o query String como um objeto (Query = variaveis passadas através da URL)
+  let queryStringObject = parsedUrl.query;
+
+  //Pega o metodo(verbo) HTTP 
+  let method = req.method.toLowerCase();
+
   //Envia uma resposta
   res.end('Oi Web\n');
 
   //Log o Path requisitado
-  console.log('Requisição para o caminho: '+trimmedPath+'\n');
+  console.log('Requisição de: '+method+' para o caminho: '+trimmedPath+' com os parametros: ',queryStringObject);
 });
 
 //Inicializa o servidor que deve escutar a porta 3000.
