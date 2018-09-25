@@ -13,11 +13,11 @@ fizz: buzz
 
 ###
 
-GET http://localhost:3000/users?name=Jose
+GET http://localhost:3000/sample
 
 ###
 
-DELETE http://localhost:3000/users?name=Jose
+DELETE http://localhost:3000/
 
 ###
 
