@@ -57,8 +57,8 @@ const server = http.createServer(function (req, res){
       var payloadString = JSON.stringify(payload);
 
       //Envia resposta
+      res.setHeader('Content-Type', 'application/json');
       res.writeHead(statusCode);
-
       res.end(payloadString);
 
       //Log o Path requisitado
