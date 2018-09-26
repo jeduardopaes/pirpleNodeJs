@@ -28,3 +28,11 @@ PATCH http://localhost:3000/users?name=Jose
 PUT http://localhost:3000/users?name=Jose
 
 ###
+
+//=============================== HTTPS ===========================
+
+###
+
+GET https://localhost:3000/sample
+
+###

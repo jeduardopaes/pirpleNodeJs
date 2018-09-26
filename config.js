@@ -1,5 +1,7 @@
 /*
-* Cria e exporta variaveis de configuração
+* Cria e exporta variaveis de configuração 
+* Comando para criar arquivos certificados para o HTTPS
+* openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pe
 */
 
 // Container para os environments
@@ -7,12 +9,14 @@ var environments = {};
 
 // staging (default) environment
 environments.staging = {
-  'port': 3000,
+  'httpPort': 3000,
+  'httpsPort':3001,
   'envName': 'Staging'
 };
 
 environments.production = {
-  'port': 5000,
+  'httpPort': 5000,
+  'httpsPort': 5001,
   'envName': 'production'
 };
 
