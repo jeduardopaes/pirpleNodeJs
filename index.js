@@ -6,6 +6,7 @@
 const http = require('http');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
+const config = require('./config');
 
 //O servidor deve responder a todos os requestes com uma String.
 const server = http.createServer(function (req, res){
@@ -72,9 +73,9 @@ const server = http.createServer(function (req, res){
 
 });
 
-//Inicializa o servidor que deve escutar a porta 3000.
-server.listen(3000,function(){
-  console.log('Servidor escutando porta 3000...');
+//Inicializa o servidor .
+server.listen(config.port,function(){
+  console.log(`Servidor escutando porta ${config.port}... in ${config.envName} mode ...`);
 });
 
 // Define o handler
