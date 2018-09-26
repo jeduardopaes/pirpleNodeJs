@@ -101,11 +101,17 @@ var unifiedServer = function (req, res) {
 };
 
 // Define o handler
-var handlers = {}
+var handlers = {};
 
+// Ping handler
 handlers.ping = function(data, callback){
   callback(200);
-}
+};
+
+// Hello handler
+handlers.hello = function(data,callback){
+  callback(200,{'message':'Hello to U too. =)'});
+};
 
 // Not Found handler
 
@@ -115,5 +121,6 @@ handlers.notFound = function (data, callback) {
 
 // Define um request router
 var router = {
-  'ping': handlers.ping
+  'ping': handlers.ping,
+  'hello': handlers.hello
 };

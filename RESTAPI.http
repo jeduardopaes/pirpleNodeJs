@@ -17,7 +17,7 @@ GET http://localhost:3000/ping
 
 ###
 
-DELETE http://localhost:3000/
+GET  http://localhost:3000/hello
 
 ###
 
