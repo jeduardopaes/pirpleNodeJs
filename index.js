@@ -13,7 +13,7 @@ const config = require('./config');
 
 //Instancia o servidor http.
 const httpServer = http.createServer(function (req, res) {
-  unifiedServer(req,res);
+  unifiedServer(req, res);
 });
 
 //Inicializa o servidor http.
@@ -22,14 +22,14 @@ httpServer.listen(config.httpPort, function () {
 });
 
 //Opções para o HTTPS
-var httpsServerOptions ={
+var httpsServerOptions = {
   'key': fs.readFileSync('./https/key.pem'),
   'cert': fs.readFileSync('./https/cert.pe')
 };
 
 //Instancia o servidor https
-const httpsServer = https.createServer(httpsServerOptions, function(req,res){
-  unifiedServer(req,res);
+const httpsServer = https.createServer(httpsServerOptions, function (req, res) {
+  unifiedServer(req, res);
 });
 
 //Inicializa o servidor https
@@ -104,13 +104,13 @@ var unifiedServer = function (req, res) {
 var handlers = {};
 
 // Ping handler
-handlers.ping = function(data, callback){
+handlers.ping = function (data, callback) {
   callback(200);
 };
 
 // Hello handler
-handlers.hello = function(data,callback){
-  callback(200,{'message':'Hello to U too. =)'});
+handlers.hello = function (data, callback) {
+  callback(200, { 'message': 'Hello to U too. =)' });
 };
 
 // Not Found handler
