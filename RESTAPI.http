@@ -13,7 +13,7 @@ fizz: buzz
 
 ###
 
-GET http://localhost:3000/sample
+GET http://localhost:3000/ping
 
 ###
 
